@@ -1,0 +1,2 @@
+{"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}

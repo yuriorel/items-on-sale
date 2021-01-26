@@ -1,0 +1,73 @@
+plugins {
+	id 'org.springframework.boot' version '2.3.3.RELEASE'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+	id 'eclipse'
+	id 'com.bmuschko.docker-remote-api' version '6.6.1'
+}
+
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+
+def dockerBuildDir = 'docker'
+def imageVersion = '1.0'
+
+group = 'com.sale.item'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+    logBackVersion="1.1.11"
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-jersey'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+
+	implementation group: 'ch.qos.logback', name: 'logback-core', version: '1.1.11'
+	implementation group: 'ch.qos.logback', name: 'logback-access', version: '1.1.11'
+	implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.11'
+	
+	testImplementation('org.springframework.boot:spring-boot-starter-test') {
+		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+	testImplementation('org.junit.jupiter:junit-jupiter:5.4.0')
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+task createDockerfile(type: Dockerfile) {
+    destFile = project.file("$dockerBuildDir/Dockerfile")
+    from 'openjdk:8-jre-alpine'
+    copyFile jar.archiveName, '/app/items-on-sale-0.0.1-SNAPSHOT.jar'
+    entryPoint 'java'
+    defaultCommand '-jar', '/app/items-on-sale-0.0.1-SNAPSHOT.jar'
+    exposePort 9080
+    runCommand 'apk --update --no-cache add curl'
+    instruction 'HEALTHCHECK CMD curl -f http://localhost:9080/hello || exit 1'
+}
+
+task syncJar(type: Copy) {
+    dependsOn assemble
+    from jar.archivePath
+    into dockerBuildDir
+}
+
+task buildImage(type: DockerBuildImage) {
+    dependsOn createDockerfile, syncJar
+    inputDir = project.file(dockerBuildDir)
+}
+
+
+
+
+
