@@ -3,6 +3,9 @@
 This application is simple Spring boot REST service to return list items in response. Spring boot version 2 and Java 1.8 has been used for development
 Gradle 6.4 has been used to build executable JAR file.
 
+
+HTTPS connection used self-signed certificate.
+
 Files
 1. com.sale.item.application.ItemsOnSaleApplication   Spring boot application.
 2. com.sale.item.config.SecurityAdapter   Spring security configuration.
@@ -13,7 +16,7 @@ Files
 7. com.sale.item.service.IItemsOnSaleService   Service interface.
 7. com.sale.item.service.ItemsOnSaleService   IItemsOnSaleService implementation to read items from file, load to cache and process requests.
 
-I used spring security with basic authentication. There are two users defined in memory 'user' what may be authenticated but does not have permissions to get data and get 403 and 'customer' what may read data. If authenticated user is the same what items requested for than no need to include it in path because used known from authenticated instance. I assume that requirements to access service from “shopping.rbc.com” means CORS and I implemented it in the same spring security class. 
+I used spring security with basic authentication. There are two users defined in memory 'user' (password 'user' as well) what may be authenticated but does not have permissions to get data and get 403 and 'customer' (password 'customer') what may read data. If authenticated user is the same what items requested for than no need to include it in path because used known from authenticated instance. I assume that requirements to access service from “shopping.rbc.com” means CORS and I implemented it in the same spring security class. 
 
 I did not use any database to simplify service and make it workable in any environment and just read items from json file and desirialize it to Java HashMap to keep it in lokal memory because data updated dayly and mostly static. After updating data service should be notified in some way to upload latest data but I just run task in separate thread using Java ScheduledExecutorService to read file periodically and refresh HashMap. Java ReadWriteLock has been used to synchronize therads because in most cases read only required.
 
@@ -21,8 +24,18 @@ Executable JAR file located under build/libs folder. File name is items-on-sale-
 
 Simple file with data located under items folder. File name is items.json.
 
-Log will be cretaed unde log folder in location where JAR executed.
+Log will be cretaed under log folder in location where JAR executed.
 
 I used postman to test service.
 
-HTTPS connection used self-signed certificate.
+Example
+1. run service with default paremeters
+   a. copy items-on-sale-0.0.1-SNAPSHOT.jar to some location
+   b. java -jar items-on-sale-0.0.1-SNAPSHOT.jar
+   c. Service started on localhost:9080, file with data should be in c:\tmp\items-on-sale\data\items.json
+   d. call service from postman https://localhost:9080/items-on-sale/recommendations/123456 
+
+2. run service with custom parameters
+   a. copy items-on-sale-0.0.1-SNAPSHOT.jar to some location
+   b. java -jar items-on-sale-0.0.1-SNAPSHOT.jar --sales.item.refresh.timeout=<timeout in seconds> --sales.item.source=<file with data> --server.port=<port>
+   d. call service from postman https://localhost:<port>/items-on-sale/recommendations/123456   
