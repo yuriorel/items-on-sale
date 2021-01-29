@@ -146,3 +146,41 @@
  Shutting down ExecutorService 'applicationTaskExecutor'
 2021-01-29 12:59:19,152 ERROR thread:SpringContextShutdownHook com.sale.item.service.ItemsOnSaleService: executor has been shutdown
  executor has been shutdown
+2021-01-29 12:59:21,615 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+ Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+2021-01-29 12:59:21,616 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+ Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+2021-01-29 12:59:21,616 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@218991f5, com.sale.item.model.ItemOnSale@e6ad968], customer=[com.sale.item.model.ItemOnSale@1c902c51, com.sale.item.model.ItemOnSale@53c4e63]}
+ Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@218991f5, com.sale.item.model.ItemOnSale@e6ad968], customer=[com.sale.item.model.ItemOnSale@1c902c51, com.sale.item.model.ItemOnSale@53c4e63]}
+2021-01-29 13:00:21,627 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+ Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+2021-01-29 13:00:21,628 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+ Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+2021-01-29 13:00:21,628 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@68576108, com.sale.item.model.ItemOnSale@302e44f3], customer=[com.sale.item.model.ItemOnSale@2d411403, com.sale.item.model.ItemOnSale@4a69189e]}
+ Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@68576108, com.sale.item.model.ItemOnSale@302e44f3], customer=[com.sale.item.model.ItemOnSale@2d411403, com.sale.item.model.ItemOnSale@4a69189e]}
+2021-01-29 13:01:21,639 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+ Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+2021-01-29 13:01:21,640 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+ Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+2021-01-29 13:01:21,640 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@19657ffa, com.sale.item.model.ItemOnSale@5b2eb9f9], customer=[com.sale.item.model.ItemOnSale@7e6a4f93, com.sale.item.model.ItemOnSale@7c450528]}
+ Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@19657ffa, com.sale.item.model.ItemOnSale@5b2eb9f9], customer=[com.sale.item.model.ItemOnSale@7e6a4f93, com.sale.item.model.ItemOnSale@7c450528]}
+2021-01-29 13:02:21,649 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+ Reding items-on-sale file: c:\tmp\items-on-sale\data\items.json
+2021-01-29 13:02:21,650 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+ Items-on-sale: {"customer": [{"itemId":"123","itemName":"Test item", "itemPrice":1000.00},{"itemId":"001","itemName":"Item-001", "itemPrice":2000.50}],
+ "123456": [{"itemId":"007","itemName":"Item-007", "itemPrice":3000.00},{"itemId":"002","itemName":"Item-002", "itemPrice":5000.00}]}
+2021-01-29 13:02:21,651 INFO  thread:pool-1-thread-1 com.sale.item.service.ItemsOnSaleService: Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@4e6d2ff5, com.sale.item.model.ItemOnSale@6022b6b0], customer=[com.sale.item.model.ItemOnSale@4c186bf0, com.sale.item.model.ItemOnSale@18a05b1e]}
+ Items-on-sale data: {123456=[com.sale.item.model.ItemOnSale@4e6d2ff5, com.sale.item.model.ItemOnSale@6022b6b0], customer=[com.sale.item.model.ItemOnSale@4c186bf0, com.sale.item.model.ItemOnSale@18a05b1e]}
+2021-01-29 13:02:31,776 INFO  thread:RMI TCP Connection(23)-127.0.0.1 org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin: Application shutdown requested.
+ Application shutdown requested.
+2021-01-29 13:02:31,927 INFO  thread:RMI TCP Connection(23)-127.0.0.1 org.springframework.scheduling.concurrent.ExecutorConfigurationSupport: Shutting down ExecutorService 'applicationTaskExecutor'
+ Shutting down ExecutorService 'applicationTaskExecutor'
+2021-01-29 13:02:31,933 ERROR thread:RMI TCP Connection(23)-127.0.0.1 com.sale.item.service.ItemsOnSaleService: executor has been shutdown
+ executor has been shutdown
